@@ -13,16 +13,41 @@
             height: 100vh;
             margin: 0;
             background-color: #ffffff;
+            transition: background-color 0.3s ease;
         }
         .logo {
             width: 350px;
             height: 100px;
         }
+        
+        /* Light mode logo (default) */
+        .logo-light {
+            display: block;
+        }
+        .logo-dark {
+            display: none;
+        }
+        
+        /* Dark mode styles */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+            
+            .logo-light {
+                display: none;
+            }
+            .logo-dark {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
     <div>
-        <img src="PS-logo-name-350x100.png" alt="Logo" class="logo" alt="Prime Stack LLC">
+        <img src="PS-logo-name-350x100.png" alt="Prime Stack LLC" class="logo logo-light">
+        <img src="PS-logo-name-white-350x100.png" alt="Prime Stack LLC" class="logo logo-dark">
     </div>
 </body>
 </html>
